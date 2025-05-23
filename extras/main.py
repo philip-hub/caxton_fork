@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-csv_file = "caxton_dataset_filtered.csv"
+csv_file = "caxton_dataset_filtered_og.csv"
 df = pd.read_csv(csv_file)
 
 # base_dir = ""
@@ -9,4 +9,4 @@ df = pd.read_csv(csv_file)
 
 df = df[df['img_path'].apply(lambda path: os.path.exists(path))]
 
-df.to_csv("filtered_output.csv", index=False)
+df.to_csv("caxton_dataset_filtered.csv", index=False)
