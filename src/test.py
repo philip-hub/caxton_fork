@@ -16,13 +16,10 @@ seed = args.seed
 
 set_seed(seed)
 
-model = ParametersClassifier.load_from_checkpoint(
-    checkpoint_path=os.environ.get("CHECKPOINT_PATH"),
-    num_classes=3,
-    lr=INITIAL_LR,
-    gpus=1,
-    transfer=False,
-)
+checkpoint_path = "/home/poundspb/Computer Vision/caxton_fork/src/checkpoints/21052025/1234/MHResAttNet-dataset_full-21052025-epoch=09-val_loss=37.10-val_acc=0.46.ckpt"
+
+# Load the model from the checkpoint
+model = ParametersClassifier.load_from_checkpoint(checkpoint_path)
 model.eval()
 
 data = ParametersDataModule(
