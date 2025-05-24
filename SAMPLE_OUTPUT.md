@@ -1,5 +1,4 @@
-Note with my current 3D Printing Setup would be difficult to get the proper photo. So this is output with the author's test samples
-
+Testing output
 <code>
 
 (env) poundspb@gebru:~/Computer Vision/caxton_fork/src$ python test.py
@@ -21,4 +20,27 @@ DATALOADER:0 TEST RESULTS
  'test_loss2': tensor(0.8445, device='cuda:0'),
  'test_loss3': tensor(0.9130, device='cuda:0'),
  'test_loss_epoch': tensor(3.6625, device='cuda:0')}
+</code>
+
+Sample Output
+
+<code>
+
+(env) poundspb@gebru:~/Computer Vision/caxton_fork/src$ python samples.py
+********* CAXTON sample predictions *********
+Flow rate | Lateral speed | Z offset | Hotend
+*********************************************
+Input: IMG_3438.jpg -> Prediction: [0 0 2 2]
+Input: IMG_3436.jpg -> Prediction: [0 0 2 2]
+Input: sample0021.jpg -> Prediction: [0 0 2 2]
+Input: sample1221.jpg -> Prediction: [0 0 2 2]
+Input: sample1111.jpg -> Prediction: [0 0 2 2]
+Input: IMG_3437.jpg -> Prediction: [0 0 2 2]
+Input: sample1011.jpg -> Prediction: [0 0 2 2]
+Input: sample2120.jpg -> Prediction: [0 0 2 2]
+Input: sample0022.jpg -> Prediction: [0 0 2 2]
+Input: sample2122.jpg -> Prediction: [0 0 2 2]
+Input: sample2011.jpg -> Prediction: [0 0 2 2]
+Completed 11 predictions in 1.84s
+
 </code>
