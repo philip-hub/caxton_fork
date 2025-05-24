@@ -10,13 +10,14 @@ DATE = datetime.now().strftime("%d%m%Y")
 
 dataset_switch = 1
 
-DATA_DIR = os.environ.get("DATA_DIR")
+DATA_DIR = "/home/poundspb/Computer Vision/caxton_fork/data"
+
 
 if dataset_switch == 0:
     DATASET_NAME = "dataset_single_layer"
     DATA_CSV = os.path.join(
         DATA_DIR,
-        "caxton_dataset/caxton_dataset_filtered_single.csv",
+        "caxton_dataset_filtered_single.csv",
     )
     DATASET_MEAN = [0.16853632, 0.17632364, 0.10495131]
     DATASET_STD = [0.05298341, 0.05527821, 0.04611006]
@@ -24,7 +25,7 @@ elif dataset_switch == 1:
     DATASET_NAME = "dataset_full"
     DATA_CSV = os.path.join(
         DATA_DIR,
-        "caxton_dataset/caxton_dataset_filtered.csv",
+        "caxton_dataset_filtered.csv",
     )
     DATASET_MEAN = [0.2915257, 0.27048784, 0.14393276]
     DATASET_STD = [0.066747, 0.06885352, 0.07679665]
@@ -32,7 +33,7 @@ elif dataset_switch == 2:
     DATASET_NAME = "dataset_equal"
     DATA_CSV = os.path.join(
         DATA_DIR,
-        "caxton_dataset/caxton_dataset_filtered_equal.csv",
+        "caxton_dataset_filtered_equal.csv",
     )
     DATASET_MEAN = [0.2925814, 0.2713622, 0.14409496]
     DATASET_STD = [0.0680447, 0.06964592, 0.0779964]
