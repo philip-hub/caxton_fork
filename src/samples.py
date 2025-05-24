@@ -1,17 +1,34 @@
 import os
+import pytorch_lightning as pl
 from model.network_module import ParametersClassifier
-from PIL import Image
-from train_config import *
+import os
 import time
+import torch
+from PIL import Image
+import pytorch_lightning as pl
+from torchvision import transforms
 
-sample_data = "data/cropped/"
+preprocess = transforms.Compose([
+    transforms.Resize((224, 224)),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.4815, 0.4578, 0.4082], std=[0.2686, 0.2613, 0.2758])
+])
 
-model = ParametersClassifier.load_from_checkpoint(
-    checkpoint_path=os.environ.get("CHECKPOINT_PATH"),
-    num_classes=3,
-    gpus=1,
-)
+
+
+# Hardcoded checkpoint path
+checkpoint_path = "/home/poundspb/Computer Vision/caxton_fork/src/checkpoints/21052025/1234/MHResAttNet-dataset_full-21052025-epoch=09-val_loss=37.10-val_acc=0.46.ckpt"
+
+# Ensure it exists
+assert os.path.exists(checkpoint_path), f"Checkpoint not found at: {checkpoint_path}"
+
+# Load the model
+model = ParametersClassifier.load_from_checkpoint(checkpoint_path)
 model.eval()
+
+sample_data = "/home/poundspb/Computer Vision/caxton_fork/data/full/"
+assert os.path.isdir(sample_data), f"Image folder not found at: {sample_data}"
+
 
 img_paths = [
     os.path.join(sample_data, img)
