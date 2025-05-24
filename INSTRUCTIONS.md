@@ -10,7 +10,7 @@
     `python3 -m venv env`<br>
     I then activated my enviorment:<br>
     `source env/bin/activate`<br><br>
-    4. I ran the command pip install requirements.txt <br>
+    4. I ran the command pip install -r requirements.txt <br>
     `pip install requirements.txt`<br>
     This at first did not work and I had to edit the requirements.txt. All I had to do was delete `dataclasses==0.8` from the requirements.txt file as this is no longer needed for Python 3.7 and higher. I opened a pull request back to the orginal Caxton repo as this was the only change I had to make for the training to run.<br><br>
     <h1>Data</h1><br>
